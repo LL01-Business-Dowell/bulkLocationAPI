@@ -1,0 +1,34 @@
+# Django
+.DS_Store
+.idea/
+*.pyc
+*.pyo
+__pycache__/
+venv/
+*env/
+media/
+static/
+*.sqlite3 
+db.sqlite3 
+*.db 
+
+# Node.js
+/node_modules/
+npm-debug.log
+yarn-error.log
+
+# Kafka
+/logs/ 
+
+# General
+.env
+.env.* 
+*.log 
+*.swp 
+*.tmp 
+*~ 
+
+# Docker
+Dockerfile*
+docker-compose.*.yml
+.dockerignore
