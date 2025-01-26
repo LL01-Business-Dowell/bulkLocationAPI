@@ -59,12 +59,7 @@ services:
       - ./.env
     networks:
       - queue-net
-    environment:
-      - API_KEY=${{ secrets.API_KEY }}
-      - API_KEY_SAMANTA=${{ secrets.API_KEY_SAMANTA }}
-      - WANTED_API_KEY=${{ secrets.WANTED_API_KEY }}
-      - WANTED_API_KEY_2=${{ secrets.WANTED_API_KEY_2 }}
-      - DEF_KEY=${{ secrets.DEF_KEY }}
+
   node-db-server:
     build:
       context: ./node-db-server
