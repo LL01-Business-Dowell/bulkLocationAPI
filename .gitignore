@@ -28,7 +28,3 @@ yarn-error.log
 *.tmp 
 *~ 
 
-# Docker
-Dockerfile*
-docker-compose.*.yml
-.dockerignore
