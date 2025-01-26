@@ -41,7 +41,8 @@ services:
       - kafka
     restart: always
     env_file:
-      - ./.env.development
+      # - ./.env.development
+      - ./.env
     networks:
       - queue-net
 
@@ -55,7 +56,7 @@ services:
       - kafka
     restart: always
     env_file:
-      - ./.env.development
+      - ./.env
     networks:
       - queue-net
     environment:
@@ -73,6 +74,8 @@ services:
     networks:
       - queue-net
     restart: always
+    env_file:
+      - ./.env
   # django-db-server:
   #   build:
   #     context: ./django-db-server

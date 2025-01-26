@@ -22,6 +22,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y docker-compose
 
+      - name: Create .env file from template
+        run: |
+          cp .env.template .env
+          echo "API_KEY=${{ secrets.API_KEY }}" >> .env
+          echo "API_KEY_SAMANTA=${{ secrets.API_KEY_SAMANTA }}" >> .env
+          echo "WANTED_API_KEY=${{ secrets.WANTED_API_KEY }}" >> .env
+          echo "WANTED_API_KEY_2=${{ secrets.WANTED_API_KEY_2 }}" >> .env
+          echo "DEF_KEY=${{ secrets.DEF_KEY }}" >> .env
       - name: Build Docker images
         run: |
           docker-compose -f docker-compose.yml build
