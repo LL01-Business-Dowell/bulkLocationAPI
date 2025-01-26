@@ -5,7 +5,7 @@
 *.pyo
 __pycache__/
 venv/
-*env/
+bulk_env/
 media/
 static/
 *.sqlite3 
@@ -22,7 +22,7 @@ yarn-error.log
 
 # General
 .env
-.env.* 
+# .env.* 
 *.log 
 *.swp 
 *.tmp 
