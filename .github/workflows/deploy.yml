@@ -17,15 +17,18 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+
       - name: Build Docker images
         run: |
           docker-compose -f docker-compose.yml build
 
-      - name: Run Docker container
-        run: |
-          docker run -e API_KEY=${{ secrets.API_KEY }} \
-                     -e WANTED_API_KEY=${{ secrets.WANTED_API_KEY }} \
-                     -e WANTED_API_KEY_2=${{ secrets.WANTED_API_KEY_2 }} \
-                     -e API_KEY_SAMANTA=${{ secrets.API_KEY_SAMANTA }} \
-                     -e DEF_KEY=${{ secrets.DEF_KEY }} \
-                     my-docker-image
+      # - name: Run Docker container
+      #   run: |
+      #     docker run -e API_KEY=${{ secrets.API_KEY }} \
+      #                -e DATABASE_URL=${{ secrets.DATABASE_URL }} \
+      #                -e SECRET_KEY=${{ secrets.SECRET_KEY }} \
+      #                my-docker-image
