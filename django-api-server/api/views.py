@@ -10,10 +10,14 @@ import requests
 import json
 import time
 from . import data_handlers as dh
+import os
 # Create your views here.
-api_key = config("API_KEY")
+# api_key = config("API_KEY")
+api_key = os.getenv('API_KEY')
 # api_key_samanta = config("API_KEY_SAMANTA")
-default_key = config("DEF_KEY")
+# api_key_samanta = os.getenv("API_KEY_SAMANTA")
+# default_key = config("DEF_KEY")
+default_key = os.getenv("DEF_KEY")
 
 
 def home(request):
