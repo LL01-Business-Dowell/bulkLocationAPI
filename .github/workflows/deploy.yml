@@ -31,4 +31,4 @@ jobs:
           docker run -e API_KEY=${{ secrets.API_KEY }} \
                      -e DATABASE_URL=${{ secrets.DATABASE_URL }} \
                      -e SECRET_KEY=${{ secrets.SECRET_KEY }} \
-                     my-docker-image
+                     django-api-server
